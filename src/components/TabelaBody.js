@@ -1,4 +1,5 @@
 import React from "react";
+import Delecao from "./Delecao";
 
 const TabelaBody = props => (
   <tbody>
@@ -8,7 +9,7 @@ const TabelaBody = props => (
         <td>{livro.titulo}</td>
         <td>{livro.autor}</td>
         <td>
-          <button className="botao remover" onClick={ () => props.removerLinha(livro.id)} >Remover</button>
+          <Delecao  delecao={props.removerLinha} livroid={livro.id}/>
         </td>
       </tr>
     ))}

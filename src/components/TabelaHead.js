@@ -1,4 +1,5 @@
 import React from "react";
+import Ordenacao from "./Ordenacao";
 
 const TabelaHead = (props) => (
   <thead>
@@ -7,16 +8,9 @@ const TabelaHead = (props) => (
     </tr>
 
     <tr>
-      <th>ISBN</th>
-      <th>Título 
-        
-        <div className="container-setinhas" >
-            <div onClick={() => props.ordenarCrescente()}>&#129093;</div>
-            <div onClick={() => props.ordenarDescrescente()}>&#129095;</div>     
-        </div>
-
-          </th>
-      <th>Autor</th>
+      <th>ISBN <Ordenacao ordCresc= { props.ordenarCrescente} ordDesc= {props.ordenarDescrescente}  /></th>
+      <th>Título <Ordenacao  ordCresc= { props.ordenarCrescente} ordDesc= {props.ordenarDescrescente} /></th>
+      <th>Autor <Ordenacao ordCresc= { props.ordenarCrescente} ordDesc= {props.ordenarDescrescente} /></th>
       <th></th>
     </tr>
   </thead>
