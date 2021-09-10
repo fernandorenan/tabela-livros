@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tabela-livros/static/css/main.90a5671a.chunk.css",
-    "main.js": "/tabela-livros/static/js/main.8510c4a2.chunk.js",
-    "main.js.map": "/tabela-livros/static/js/main.8510c4a2.chunk.js.map",
+    "main.js": "/tabela-livros/static/js/main.c6d54b8b.chunk.js",
+    "main.js.map": "/tabela-livros/static/js/main.c6d54b8b.chunk.js.map",
     "runtime-main.js": "/tabela-livros/static/js/runtime-main.87f695c6.js",
     "runtime-main.js.map": "/tabela-livros/static/js/runtime-main.87f695c6.js.map",
     "static/js/2.69ad991e.chunk.js": "/tabela-livros/static/js/2.69ad991e.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.87f695c6.js",
     "static/js/2.69ad991e.chunk.js",
     "static/css/main.90a5671a.chunk.css",
-    "static/js/main.8510c4a2.chunk.js"
+    "static/js/main.c6d54b8b.chunk.js"
   ]
 }
