@@ -69,6 +69,7 @@ tfoot > tr {
   height: 40px;
   margin-left: 10px;
   vertical-align: middle;
+  font-size: small;
 }
 
 .container-setinhas > div { cursor:pointer;}
