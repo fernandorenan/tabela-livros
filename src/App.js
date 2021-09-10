@@ -9,7 +9,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("/api/livros.json")
+    fetch("https://fernandorenan.github.io/tabela-livros/api/livros.json")
      .then(response => response.json())
      .then(livros => this.setState({livros}))
      .catch(function(error) {
