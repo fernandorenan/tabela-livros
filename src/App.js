@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import TabelaHead from "./components/TabelaHead";
+import TabelaBody from "./components/TabelaBody";
+import TabelaFoot from "./components/TabelaFoot";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    livros: []
+  };
+
+  componentDidMount() {
+    fetch("/api/livros.json")
+     .then(response => response.json())
+     .then(livros => this.setState({livros}))
+     .catch(function(error) {
+       console.log('Erro na requisição');
+     })
+     .finally(function(){
+       console.log("Sempre retorna");
+     });
+  }
+
+  handleRemoverLinha = (id) => {
+    
+    const livros = this.state.livros.filter(l => l.id !== id);
+    this.setState({livros});
+
+  };
+
+  handleOrdenarCrescente = (titulo) => {
+    const livros = this.state.livros.sort((a,b) =>
+    a.titulo < b.titulo ? -1:0
+    );
+    this.setState({livros});
+  };
+
+  handleOrdenarDecrescente = (titulo) => {
+    const livros = this.state.livros.sort((a,b) =>
+    a.titulo < b.titulo ? -1:0
+    );
+    livros.reverse()
+    this.setState({livros});
+  };
+
+
+  render() {
+    return (
+      <table className="tabela">
+        <TabelaHead ordenarCrescente= { this.handleOrdenarCrescente} ordenarDescrescente= {this.handleOrdenarDecrescente} />
+        <TabelaFoot livros={this.state.livros} />
+        <TabelaBody livros={this.state.livros} removerLinha={this.handleRemoverLinha} />
+      </table>
+    );
+  }
 }
-
 export default App;
